@@ -1,0 +1,34 @@
+MVI C, 05H
+LXI H, 0001H
+MOV A, M
+INX H
+DCR C
+
+LOOP: CMP M
+   JNC L1
+   MOV A, M
+   L1: INX H
+   DCR C
+   JNZ LOOP
+  
+   STA 0006H
+
+
+MVI C, 05H
+LXI H, 0001H
+MOV A, M
+INX H
+DCR C
+
+LOOP2: CMP M
+   JC L2
+   MOV A, M
+   L2: INX H
+   DCR C
+   JNZ LOOP2
+  
+   STA 0007H
+   
+
+HLT
+   
